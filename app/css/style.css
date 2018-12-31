@@ -19,7 +19,7 @@ body {
 }
 
 body {
-    color: #333;
+    color: #fff;
     background-color: rgba(0, 0, 0, 0);
 }
 
@@ -29,7 +29,6 @@ body {
     font-family: /*Montserrat,*/
     Arial, Verdana, sans-serif;
     font-size: 14px;
-    padding: 5px;
     height: calc(100% - 30px);
     margin-top: 30px;
     overflow-y: auto;
@@ -41,4 +40,30 @@ h1 {
     margin: 5px;
     line-height: 1.2;
     font-weight: 600;
+}
+
+.main-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto 1fr;
+}
+
+.main-panel {
+    grid-column: 1 / span 2;
+    padding: 10px 5px;
+    display: flex;
+    align-items: center;
+}
+
+.panel-group {
+    padding: 0 5px;
+    display: flex;
+}
+
+.panel-item {
+    margin: 0 3px;
+}
+
+.section {
+    background-color: red
 }

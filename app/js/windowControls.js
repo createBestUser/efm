@@ -1,5 +1,7 @@
 const remote = require('electron').remote;
 
+console.log('win');
+
 (() => {
 
     let init = () => {
@@ -53,19 +55,9 @@ const remote = require('electron').remote;
         })
 
         win.on('maximize', () => {
-            document.body.style.borderRadius = '0'
-            windowFrame.style = {
-                borderTopLeftRadius: 0,
-                borderTopRightRadius: 0
-            }
             toggleMaxButton()
         })
         win.on('unmaximize', () => {
-            document.body.style.borderRadius = '5px'
-            windowFrame.style = {
-                borderTopLeftRadius: '5px',
-                borderTopRightRadius: '5px'
-            }
             toggleMaxButton()
         })
     }
@@ -75,4 +67,5 @@ const remote = require('electron').remote;
             init()
         }
     }
+
 })()
