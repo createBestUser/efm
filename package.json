@@ -1,0 +1,14 @@
+{
+  "name": "efm",
+  "version": "1.0.0",
+  "description": "Electron File Manager",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [
+    "electron.js"
+  ],
+  "author": "bogdanbryzh",
+  "license": "MIT"
+}
