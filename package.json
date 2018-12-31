@@ -10,5 +10,9 @@
     "electron.js"
   ],
   "author": "bogdanbryzh",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": "https://github.com/createBestUser/efm.git",
+  "dependencies": {
+    "fs-extra": "^7.0.1"
+  }
 }
