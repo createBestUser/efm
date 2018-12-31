@@ -1,0 +1,84 @@
+/* Window frame styles */
+
+#frame {
+    display: block;
+    position: absolute;
+    top: 0;
+    padding: 2px;
+    height: 30px;
+    width: 100%;
+    color: #fff;
+    background-color: #2d3038;
+    font-family: /*'Montserrat',*/sans-serif;
+    -webkit-user-select: none
+}
+
+#drag-region {
+    -webkit-app-region: drag;
+    /* padding in the #frame and <= this made for resizing window, if not you couldn't resize window at top */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#winTitle {
+    padding-left: 10px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+#winControls {
+    font-size: 14px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 32px);
+    grid-template-rows: 30px;
+}
+
+.controls-btn {
+    -webkit-app-region: no-drag;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#winClose:hover {
+    background-color: #fb5854;
+}
+
+#winMin:hover,
+#winMax:hover,
+#winUnmax:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#winDevControls {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 30px;
+    display: flex;
+}
+
+.controls-dev-btn {
+    font-size: 12px;
+    padding: 10px 5px;
+    cursor: pointer;
+}
+
+.controls-dev-btn:first-child {
+    padding-left: 10px;
+}
+
+.controls-dev-btn span {
+    display: block;
+    width: 12px;
+    height: 12px;
+    -webkit-app-region: no-drag;
+}
