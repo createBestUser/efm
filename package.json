@@ -1,18 +1,18 @@
 {
   "name": "efm",
   "version": "1.0.0",
-  "description": "Electron File Manager",
+  "description": "electron.js file manager",
   "main": "index.js",
   "scripts": {
-    "start": "electron ."
+    "start": "npx electron ."
+  },
+  "repository": "https://github.com/createBestUser/efm.git",
+  "dependencies": {
+    "fs-extra": "^7.0.1"
   },
   "keywords": [
     "electron.js"
   ],
   "author": "bogdanbryzh",
-  "license": "MIT",
-  "repository": "https://github.com/createBestUser/efm.git",
-  "dependencies": {
-    "fs-extra": "^7.0.1"
-  }
+  "license": "MIT"
 }

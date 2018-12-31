@@ -1,41 +1,39 @@
-const electron = require( 'electron' ),
-	  url = require( 'url' ),
-	  path = require( 'path' )
+const { app, BrowserWindow } = require('electron')
 
-const = { app, BrowserWindow, globalShortcut } = require('electron')
+let mainWin
 
-let MainWindow
+const createMainWindow = () => {
 
-const boot = () => {
-	MainWindow = new BrowserWindow({
-		width: 600,
-		height: 700,
-		show: false,
-		frame: false,
-		webPreferences: {
-			nodeIntegration: true
-		},
-		icon: './icon.png'
-	})
+    mainWin = new BrowserWindow({
+        width: 600,
+        minWidth: 500,
+        height: 700,
+        minHeight: 600,
+        show: false,
+        frame: false,
+        webPreferences: {
+            nodeIntegration: true
+        },
+        transparent: true,
+    })
 
-	MainWindow.loadURL(url.format({
-		pathname: path.join(__dirname, 'app/index.html')
-	}))
+    mainWin.loadFile('./app/index.html')
 
-	MainWindow.once('ready-to-show', () => {
-		MainWindow.show()
-	})
+    // mainWin.webContents.openDevTools()
 
-	MainWindow.on('closed', () => {
-		MainWindow = null
-	})
+    mainWin.once('ready-to-show', () => {
+        mainWin.show()
+    })
 
-	globalShortcut.register('F5', () => {
-		MainWindow.reload()
-	})
+    mainWin.on('closed', () => {
+        mainWin = null
+    })
 }
 
-app.on('ready', boot)
+app.on('ready', () => {
+    setTimeout(createMainWindow, 100)
+    // It's a hack for Linux platform /* add a link to issue */
+})
 
 app.on('window-all-closed', () => {
 	if ( process.platform !== 'darwin' ) {
@@ -44,7 +42,7 @@ app.on('window-all-closed', () => {
 })
 
 app.on('activate', () => {
-	if ( MainWindow === null ) {
-		boot()
+	if ( mainWin === null ) {
+		createMainWindow()
 	}
 })
