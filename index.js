@@ -14,7 +14,8 @@ let boot = () => {
 		show: false,
 		webPreferences: {
 			nodeIntegration: true
-		}
+		},
+		icon: './icon.png'
 	})
 
 	mainWindow.loadURL(url.format({
