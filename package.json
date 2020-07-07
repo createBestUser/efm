@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/createBestUser/efm#readme",
   "dependencies": {
-    "electron": "^4.0.0",
+    "electron": "^7.2.4",
     "fs-extra": "^7.0.1"
   }
 }
